@@ -1,10 +1,19 @@
 import HomeHero from "@/components/blocks/HomeHero";
+import About from "@/components/home/About";
+import BulkOrderSection from "@/components/home/BulkOrderSection";
+import ContactBanner from "@/components/home/ContactBanner";
+import ProductGrid from "@/components/home/ProductGrid";
+import Testimonails from "@/components/home/Testimonails";
 
 export default function Home() {
   return (
     <section className="min-h-[200vh] ">
       <HomeHero />
-      <h1 className="text-3xl fair">Playfair_Display</h1>
+      <About />
+      <ProductGrid />
+      <BulkOrderSection />
+      <Testimonails />
+      <ContactBanner />
     </section>
   );
 }
