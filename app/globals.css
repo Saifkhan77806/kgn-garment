@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-fair: var(--font-playfair-display);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +23,58 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+ font-family: var(--font-fair), Arial, Helvetica, sans-serif;
+}
+
+.fair {
+  font-family: var(--font-playfair-display), serif;
+}
+
+.text-primary{
+  @apply text-[#1C2A39]
+}
+
+.text-copper{
+  @apply text-[#B87333]
+}
+
+.text-beige {
+  @apply text-[#F5EBDC]
+}
+
+.text-ivory {
+  @apply text-[#FFF9F4]
+}
+
+.text-charcoal {
+  @apply text-[#333333]
+}
+
+.text-gold {
+  @apply text-[#D4A373]
+}
+
+
+.bg-primary{
+  @apply bg-[#1C2A39]
+}
+
+.bg-copper{
+  @apply bg-[#B87333]
+}
+
+.bg-beige {
+  @apply bg-[#F5EBDC]
+}
+
+.bg-ivory {
+  @apply bg-[#FFF9F4]
+}
+
+.bg-charcoal {
+  @apply bg-[#333333]
+}
+
+.bg-gold {
+  @apply bg-[#D4A373]
 }
