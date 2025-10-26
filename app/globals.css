@@ -11,12 +11,16 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-fair: var(--font-playfair-display);
+  --text-gold: var(--gold);
+  --text-copper: var(--copper);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --gold: #D4A373;
+    --copper: #B87333;
   }
 }
 

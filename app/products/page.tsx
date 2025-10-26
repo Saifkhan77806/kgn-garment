@@ -1,9 +1,14 @@
-import React from 'react'
+import HeroSection from "@/components/products/HeroSection";
+import ProductsSection from "@/components/products/ProductData";
+import React from "react";
 
 const Products = () => {
   return (
-    <div>Products</div>
-  )
-}
+    <>
+      <HeroSection />
+      <ProductsSection />
+    </>
+  );
+};
 
-export default Products
+export default Products;

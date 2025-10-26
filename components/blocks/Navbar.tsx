@@ -59,7 +59,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   return (
-    <nav className=" fixed top-0 w-full z-50 bg-ivory">
+    <nav className=" fixed top-0 w-full z-50 bg-ivory font-fair">
       <div className="relative h-24 w-[120px] md:w-[192px] lg:w-[450px] mx-auto">
         <Image
           src="/assets/logo.png"
