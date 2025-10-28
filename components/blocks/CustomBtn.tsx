@@ -1,8 +1,12 @@
-import React from "react";
+'use client'
+
+import { useRouter } from "next/navigation";
 
 const CustomBtn = ({ text }: { text: string }) => {
+  const router = useRouter()
+
   return (
-    <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-i from-copper to-gold text-ivory font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-copper/50 hover:scale-105 bg-gold">
+    <button onClick={()=> router.push("/contact-us")} className="group cursor-pointer relative inline-flex items-center gap-3 px-8 py-4 bg-i from-copper to-gold text-ivory font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-copper/50 hover:scale-105 bg-gold">
       <span className="relative z-10">{text}</span>
       <svg
         className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"

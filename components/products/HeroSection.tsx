@@ -1,15 +1,41 @@
+"use client";
 import React from "react";
-import Hero from "../blocks/Hero";
 import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const textVariants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-12 md:pb-20">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
-          <div className="space-y-6 font-fair">
+          <motion.div
+            className="space-y-6 font-fair"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={textVariants}
+          >
             <p className="py-1 px-3 rounded-full border border-gray-600 w-fit font-sans text-sm tracking-wider">
               KGN GARMENT PRODUCTS
             </p>
@@ -35,32 +61,41 @@ const HeroSection = () => {
                 thoughtfully designed to reflect individuality, comfort, and
                 elegance.
               </p>
-             
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
-              <button className="py-3 px-6 bg-copper text-white font-sans flex justify-center items-center gap-x-2 cursor-pointer group hover:bg-opacity-90 transition-all">
+            {/* <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-4">
+              <motion.button
+                className="py-3 px-6 bg-copper text-white font-sans flex justify-center items-center gap-x-2 cursor-pointer group hover:bg-opacity-90 transition-all"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
                 Explore Our Collection{" "}
                 <ArrowRight className="size-5 group-hover:translate-x-0.5 transition-all stroke-1" />
-              </button>
+              </motion.button>
 
               <div className="flex items-center gap-2 text-gray-700">
                 <Star className="size-5 fill-yellow-500 stroke-yellow-500" />
                 <span className="font-medium">4.8/5 Customer Satisfaction</span>
               </div>
-            </div>
-          </div>
+            </div> */}
+          </motion.div>
 
           {/* Right Image */}
-          <div className="relative h-[500px] -translate-y-10 my-auto sm:translate-y-0 md:h-[600px] lg:h-[700px] w-full">
+          <motion.div
+            className="relative h-[500px] -translate-y-10 my-auto sm:translate-y-0 md:h-[600px] lg:h-[700px] w-full"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={imageVariants}
+          >
             <Image
-              src={"/assets/about/hero.png"}
+              src={"/assets/products/products.jpg"}
               alt="hero section image"
               fill
               className="object-contain object-center md:object-right"
               priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

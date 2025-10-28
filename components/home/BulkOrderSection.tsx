@@ -1,9 +1,15 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function BulkOrderSection() {
+
+  const router = useRouter()
+
   return (
     <section className="relative py-16 px-6 overflow-hidden bg-gradient-to-br from-primary via-[#1a2532] to-primary fair">
-     
       {/* Pattern Overlay */}
       <div
         className="absolute inset-0 opacity-5"
@@ -15,7 +21,13 @@ export default function BulkOrderSection() {
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center space-y-6">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-ivory/10 backdrop-blur-sm border border-gold/30 rounded-full">
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-ivory/10 backdrop-blur-sm border border-gold/30 rounded-full"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <svg
               className="w-4 h-4 text-gold"
               fill="currentColor"
@@ -26,25 +38,41 @@ export default function BulkOrderSection() {
             <span className="text-sm font-medium text-ivory">
               Premium Bulk Services
             </span>
-          </div>
+          </motion.div>
 
           {/* Main Heading */}
-          <div className="space-y-4 fair">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory leading-tight">
-              We Supply For
-            </h2>
-          </div>
+          <motion.h2
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-ivory leading-tight"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            We Supply For
+          </motion.h2>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-beige max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            className="text-lg md:text-xl text-beige max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Elevate your event with our exclusive bulk ordering service. Premium
             quality, competitive pricing, and dedicated support for your special
             occasion.
-          </p>
+          </motion.p>
 
           {/* CTA Button */}
-          <div className="pt-4">
-            <button className="group relative inline-flex items-center gap-3 px-8 py-4 bg-i from-copper to-gold text-ivory font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-copper/50 hover:scale-105 bg-gold">
+          <motion.div
+            className="pt-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <button onClick={()=> router.push("/contact-us")} className="group relative inline-flex items-center gap-3 px-8 py-4 bg-i from-copper to-gold text-ivory font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-copper/50 hover:scale-105 bg-gold">
               <span className="relative z-10">Request Bulk Quote</span>
               <svg
                 className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
@@ -80,98 +108,56 @@ export default function BulkOrderSection() {
               </svg>
               <div className="absolute inset-0 bg-gradient-to-r from-gold to-copper opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </button>
-          </div>
+          </motion.div>
 
           {/* Trust Indicators */}
-          <div className="pt-8 flex flex-wrap justify-center items-center gap-8 text-beige text-sm">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <defs>
-                  <linearGradient
-                    id="checkGrad1"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "#D4A373", stopOpacity: 1 }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "#B87333", stopOpacity: 1 }}
-                    />
-                  </linearGradient>
-                </defs>
-                <path
-                  fill="url(#checkGrad1)"
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Minimum Order: 50 Pieces</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <defs>
-                  <linearGradient
-                    id="checkGrad2"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "#D4A373", stopOpacity: 1 }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "#B87333", stopOpacity: 1 }}
-                    />
-                  </linearGradient>
-                </defs>
-                <path
-                  fill="url(#checkGrad2)"
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Custom Tailoring Available</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <defs>
-                  <linearGradient
-                    id="checkGrad3"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="100%"
-                  >
-                    <stop
-                      offset="0%"
-                      style={{ stopColor: "#D4A373", stopOpacity: 1 }}
-                    />
-                    <stop
-                      offset="100%"
-                      style={{ stopColor: "#B87333", stopOpacity: 1 }}
-                    />
-                  </linearGradient>
-                </defs>
-                <path
-                  fill="url(#checkGrad3)"
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>Fast Turnaround Time</span>
-            </div>
-          </div>
+          <motion.div
+            className="pt-8 flex flex-wrap justify-center items-center gap-8 text-beige text-sm"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            {[
+              "Minimum Order: 50 Pieces",
+              "Custom Tailoring Available",
+              "Fast Turnaround Time",
+            ].map((text, index) => (
+              <div key={index} className="flex items-center gap-2">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <defs>
+                    <linearGradient
+                      id={`checkGrad${index}`}
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style={{ stopColor: "#D4A373", stopOpacity: 1 }}
+                      />
+                      <stop
+                        offset="100%"
+                        style={{ stopColor: "#B87333", stopOpacity: 1 }}
+                      />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill={`url(#checkGrad${index})`}
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>{text}</span>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
